@@ -8,8 +8,12 @@ client = new Paho.MQTT.Client("broker.emqx.io", 8084, "clientId-workshopiot-3289
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
+// var options = {
+//     time
+// }
+
 // connect the client
-client.connect({onSuccess:onConnect});
+client.connect({onSuccess:onConnect, useSSL: true});
 
 
 // called when the client connects
