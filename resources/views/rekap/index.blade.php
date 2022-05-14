@@ -97,60 +97,47 @@
         }
     </script>
     <script>
-        function updateGaugePh(data_ph) {
-            var opts = {
-                angle: 0.15,
-                lineWidth: 0.44,
-                radiusScale: 1,
-                pointer: {
-                    length: 0.6,
-                    strokeWidth: 0.035,
-                    color: '#000000'
-                },
-                limitMax: false,
-                limitMin: false,
-                colorStart: '#6FADCF',
-                colorStop: '#8FC0DA',
-                strokeColor: '#E0E0E0',
-                generateGradient: true,
-                highDpiSupport: true,
+        var opts = {
+            angle: 0.15,
+            lineWidth: 0.44,
+            radiusScale: 1,
+            pointer: {
+                length: 0.6,
+                strokeWidth: 0.035,
+                color: '#000000'
+            },
+            limitMax: false,
+            limitMin: false,
+            colorStart: '#6FADCF',
+            colorStop: '#8FC0DA',
+            strokeColor: '#E0E0E0',
+            generateGradient: true,
+            highDpiSupport: true,
 
-            };
-            var target = document.getElementById('gauge-ph');
-            var gauge = new Gauge(target).setOptions(opts);
-            gauge.maxValue = {{ $ph_max }};
-            gauge.setMinValue({{ $ph_min }});
-            gauge.animationSpeed = 32;
-            gauge.set(data_ph);
+        };
+
+        var target_ph = document.getElementById('gauge-ph');
+        var gauge_ph = new Gauge(target_ph).setOptions(opts);
+        gauge_ph.maxValue = {{ $ph_max }};
+        gauge_ph.setMinValue({{ $ph_min }});
+        gauge_ph.animationSpeed = 32;
+        gauge_ph.set(data_ph);
+
+        function updateGaugePh(data_ph) {
+            gauge_ph.set(data_ph);
         }
     </script>
 
     <script>
-        function updateGaugeTds(data_tds) {
-            var opts = {
-                angle: 0.15,
-                lineWidth: 0.44,
-                radiusScale: 1,
-                pointer: {
-                    length: 0.6,
-                    strokeWidth: 0.035,
-                    color: '#000000'
-                },
-                limitMax: false,
-                limitMin: false,
-                colorStart: '#6FADCF',
-                colorStop: '#8FC0DA',
-                strokeColor: '#E0E0E0',
-                generateGradient: true,
-                highDpiSupport: true,
+        var target_tds = document.getElementById('gauge-tds');
+        var gauge_tds = new Gauge(target_tds).setOptions(opts);
+        gauge_tds.maxValue = {{ $tds_max }};
+        gauge_tds.setMinValue({{ $tds_min }});
+        gauge_tds.animationSpeed = 32;
+        gauge_tds.set(data_tds);
 
-            };
-            var target = document.getElementById('gauge-tds');
-            var gauge = new Gauge(target).setOptions(opts);
-            gauge.maxValue = {{ $tds_max }};
-            gauge.setMinValue({{ $tds_min }});
-            gauge.animationSpeed = 32;
-            gauge.set(data_tds);
+        function updateGaugeTds(data_tds) {
+            gauge_tds.set(data_tds);
         }
     </script>
 @endsection

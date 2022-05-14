@@ -74,6 +74,7 @@
         Plotly.plot('grafik-container', rawData);
 
         function updateAllDataChart(dataPh, dataTds) {
+            var time = new Date();
             var update = {
                 x: [
                     [time],
@@ -87,8 +88,6 @@
 
             var olderTime = time.setMinutes(time.getMinutes() - 1);
             var futureTime = time.setMinutes(time.getMinutes() + 1);
-
-            console.log(futureTime);
 
             var minuteView = {
                 xaaxis: {
