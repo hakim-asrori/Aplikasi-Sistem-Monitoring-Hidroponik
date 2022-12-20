@@ -93,7 +93,7 @@
                                 aria-expanded="false">
                                 <div class="media align-items-center">
                                     <span class="avatar avatar-sm rounded-circle">
-                                        <img alt="Image placeholder" src="{{ url('img/theme/team-4.jpg') }}">
+                                        <img alt="Image placeholder" src="{{ url('img/logo.png') }}">
                                     </span>
                                     <div class="media-body  ml-2  d-none d-lg-block">
                                         <span
@@ -103,26 +103,10 @@
                             </a>
                             <div class="dropdown-menu  dropdown-menu-right ">
                                 <div class="dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome!</h6>
+                                    <h6 class="text-overflow m-0">Selamat Datang!</h6>
                                 </div>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-single-02"></i>
-                                    <span>My profile</span>
-                                </a>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-settings-gear-65"></i>
-                                    <span>Settings</span>
-                                </a>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-calendar-grid-58"></i>
-                                    <span>Activity</span>
-                                </a>
-                                <a href="#!" class="dropdown-item">
-                                    <i class="ni ni-support-16"></i>
-                                    <span>Support</span>
-                                </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="#!" class="dropdown-item">
+                                <a href="{{ url('logout') }}" class="dropdown-item">
                                     <i class="ni ni-user-run"></i>
                                     <span>Logout</span>
                                 </a>
@@ -150,9 +134,17 @@
                             </div>
                         @endif
                         @if ($app_title == 'Rekap Data Sensor')
-                            <div class="col-lg-6 col-5 text-right">
-                                <a href="{{ url('rekap/download') }}" class="btn btn-neutral"><i
-                                        class="fa fa-download"></i> Export</a>
+                            <div class="col-lg-6 col-5">
+                                <div class="d-flex justify-content-end">
+                                    <div class=" text-right mr-3">
+                                        <a href="{{ url('ph/download') }}" class="btn btn-neutral"><i
+                                                class="fa fa-download"></i> Rekap PH</a>
+                                    </div>
+                                    <div class="text-right">
+                                        <a href="{{ url('tds/download') }}" class="btn btn-neutral"><i
+                                                class="fa fa-download"></i> Rekap TDS</a>
+                                    </div>
+                                </div>
                             </div>
                         @endif
                     </div>

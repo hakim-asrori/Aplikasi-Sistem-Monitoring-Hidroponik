@@ -9,6 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="shortcut icon" href="{{ url('img/logo.png') }}" type="image/x-icon">
+
     <title>Login</title>
 
     <link
@@ -32,8 +34,8 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="p-5">
-                                    <img src="{{ url('img/logo.png') }}">
                                     <div class="text-center">
+                                        <img src="{{ url('img/logo.png') }}" width="200">
                                         <h1 class="h4 text-gray-900 mb-4">Hidroponik Automatic</h1>
                                     </div>
                                     <form class="user" method="post" action="{{ url('login') }}"

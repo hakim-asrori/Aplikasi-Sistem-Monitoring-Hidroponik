@@ -118,8 +118,8 @@
 
         var target_ph = document.getElementById('gauge-ph');
         var gauge_ph = new Gauge(target_ph).setOptions(opts);
-        gauge_ph.maxValue = {{ $ph_max }};
-        gauge_ph.setMinValue({{ $ph_min }});
+        gauge_ph.maxValue = 20;
+        gauge_ph.setMinValue(0);
         gauge_ph.animationSpeed = 32;
         gauge_ph.set(data_ph);
 
@@ -131,8 +131,8 @@
     <script>
         var target_tds = document.getElementById('gauge-tds');
         var gauge_tds = new Gauge(target_tds).setOptions(opts);
-        gauge_tds.maxValue = {{ $tds_max }};
-        gauge_tds.setMinValue({{ $tds_min }});
+        gauge_tds.maxValue = 3000;
+        gauge_tds.setMinValue(0);
         gauge_tds.animationSpeed = 32;
         gauge_tds.set(data_tds);
 

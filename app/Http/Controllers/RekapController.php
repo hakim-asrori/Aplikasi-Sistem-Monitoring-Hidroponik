@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\SensorExport;
+use App\Exports\TdsExport;
 use App\Models\Ph;
 use App\Models\Tds;
 use Illuminate\Http\Request;
@@ -24,8 +25,13 @@ class RekapController extends Controller
         return view('rekap.index', $data);
     }
 
-    public function download()
+    public function phDownload()
     {
-        return Excel::download(new SensorExport, date('d_m_Y_His') . '_Data_Sensor.xlsx');
+        return Excel::download(new SensorExport, date('d_m_Y_His') . '_Data_PH.xlsx');
+    }
+
+    public function tdsDownload()
+    {
+        return Excel::download(new TdsExport, date('d_m_Y_His') . '_Data_TDS.xlsx');
     }
 }

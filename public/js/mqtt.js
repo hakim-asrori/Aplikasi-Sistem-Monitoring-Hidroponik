@@ -2,7 +2,7 @@ var topicPub = "hidroponik_polindra_aksi"
 var topicSub = "hidroponik_polindra_data"
 
 // Create a client instance
-client = new Paho.MQTT.Client("broker.emqx.io", 8084, "clientId-workshopiot-32894327894732894329042-harus-unix");
+client = new Paho.MQTT.Client("broker.hivemq.com", 8000, "clientId-workshopiot-32894327894732894329042-harus-unix");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
@@ -13,7 +13,7 @@ client.onMessageArrived = onMessageArrived;
 // }
 
 // connect the client
-client.connect({onSuccess:onConnect, useSSL: true});
+client.connect({onSuccess:onConnect});
 
 
 // called when the client connects

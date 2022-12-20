@@ -37,5 +37,6 @@ Route::middleware(['otentikasi'])->group(function () {
 
     // Rekap
     Route::get('rekap', [RekapController::class, 'index']);
-    Route::get('rekap/download', [RekapController::class, 'download']);
+    Route::get('tds/download', [RekapController::class, 'tdsDownload']);
+    Route::get('ph/download', [RekapController::class, 'phDownload']);
 });
